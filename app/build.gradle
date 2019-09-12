@@ -1,0 +1,105 @@
+apply plugin: 'com.android.application'
+
+android {
+    signingConfigs {
+        config {
+            keyAlias 'key0'
+            keyPassword 'kxy2018'
+            storeFile file('D:/java/AndroidWork/land/land.jks')
+            storePassword 'kxy2018'
+        }
+    }
+    compileSdkVersion 27
+    buildToolsVersion '27.0.3'
+    aaptOptions.cruncherEnabled = false
+    aaptOptions.useNewCruncher = false
+    defaultConfig {
+        minSdkVersion 23
+        targetSdkVersion 27
+        versionCode 6
+        versionName "1.0.6"
+        flavorDimensions "1.0.6"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        archivesBaseName = "SugarLand_${versionName}".replace(' ', '_')
+        ndk {
+            abiFilters "armeabi-v7a"
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+        }
+    }
+    sourceSets {
+        main {
+            jni.srcDirs = []
+            jniLibs.srcDirs = ['libs']
+            assets.srcDirs = ['src/main/assets', 'src/main/assets/']
+        }
+    }
+    packagingOptions {
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/DEPENDENCIES'
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    productFlavors {
+        base {
+            applicationId "cn.cassia.sugar.land"
+            resValue "string","app_name","地块管理系统"
+            manifestPlaceholders = [app_icon : "@mipmap/ic_launcher"]
+            buildConfigField "int", "TYPE", "1"
+        }
+//        guitang {
+//            applicationId "cn.cassia.sugar.land.guitang"
+//            resValue "string","app_name","地块管理系统(贵糖)"
+//            manifestPlaceholders = [app_icon : "@mipmap/ic_launcher"]
+//            buildConfigField "int", "TYPE", "2"
+//        }
+/*        boqing {
+            applicationId "cn.cassia.sugar.land.boqing"
+            resValue "string","app_name","博庆地块管理系统"
+            manifestPlaceholders = [app_icon : "@mipmap/ic_launcher"]
+            buildConfigField "int", "TYPE", "3"
+        }*/
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+}
+
+dependencies {
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    api 'com.android.support:appcompat-v7:27.1.1'
+    api 'com.android.support:design:27.1.1'
+    api 'com.android.support.constraint:constraint-layout:1.1.3'
+    api 'com.android.support:cardview-v7:27.1.1'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    api 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    api 'com.ashokvarma.android:bottom-navigation-bar:1.2.0'
+    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.34'
+    api 'pub.devrel:easypermissions:1.2.0'
+    api 'com.orhanobut:logger:2.1.1'
+    api 'com.google.code.gson:gson:2.8.5'
+    api 'com.airbnb.android:lottie:2.5.4'
+    api 'com.github.pinguo-zhouwei:CustomPopwindow:2.1.1'
+    api 'com.orhanobut:dialogplus:1.11@aar'
+    api 'com.github.bumptech.glide:glide:4.7.1'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.7.1'
+    api 'jp.wasabeef:glide-transformations:3.3.0'
+    api 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.4-7'
+    api 'com.scwang.smartrefresh:SmartRefreshHeader:1.0.4-7'
+    //api 'com.github.markzhai:blockcanary-android:1.5.0'
+    debugApi 'com.github.markzhai:blockcanary-android:1.5.0'
+    releaseApi 'com.github.markzhai:blockcanary-no-op:1.5.0'
+    api 'com.inuker.bluetooth:library:1.4.0'
+}

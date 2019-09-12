@@ -1,0 +1,38 @@
+@charset "utf-8";
+.ol-right-angle-scale-line {
+    position: fixed;
+    bottom: 4px;
+    left: 4px;
+}
+
+.ol-right-angle-scale-line-inner {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background: none;
+    border-left: 1px solid #FF9800;
+    border-bottom: 1px solid #FF9800;
+    color: #FF9800;
+    font-size: 13px;
+    text-indent: 5px;
+    line-height: 24px;
+}
+
+.ol-right-angle-scale-line-inner:before {
+    position: absolute;
+    left: 100%;
+    bottom: -1px;
+    content: ' ';
+    width: 1px;
+    height: 5px;
+    border-left: 1px solid #FF9800;
+}
+
+.ol-right-angle-scale-line-inner:after {
+    position: absolute;
+    left: -1px;
+    content: ' ';
+    width: 5px;
+    height: 1px;
+    border-top: 1px solid #FF9800;
+}

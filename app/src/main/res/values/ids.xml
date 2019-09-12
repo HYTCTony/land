@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="container" type="id" />
+    <item name="toolbar" type="id" />
+    <item name="iv" type="id" />
+    <item name="tv" type="id" />
+    <item name="rv" type="id" />
+    <item name="swipe" type="id" />
+    <item name="smart" type="id" />
+    <item name="et" type="id" />
+    <item name="gv" type="id" />
+    <item name="lv" type="id" />
+    <item name="btn" type="id" />
+    <item name="ll" type="id" />
+    <item name="pb" type="id" />
+    <item name="pager" type="id" />
+    <item name="fl" type="id" />
+    <item name="rl" type="id" />
+    <item name="rb" type="id" />
+    <item name="tab" type="id"/>
+    <item name="web" type="id"/>
+    <item type="id" name="scrollview"/>
+</resources>

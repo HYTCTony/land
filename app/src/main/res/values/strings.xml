@@ -1,0 +1,10 @@
+<resources>
+  <!--  <string name="app_name">糖业地块管理系统</string>-->
+
+    <string name="dialog_default_title">这是一条提示信息!</string>
+    <string name="dialog_ok">OK</string>
+    <string name="dialog_cancel">Cancel</string>
+    <string name="LOADING">加载中...</string>
+    <string name="login">登录</string>
+    <string name="autologin">退出登录</string>
+</resources>

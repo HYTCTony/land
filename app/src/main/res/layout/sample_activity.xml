@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF">
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@android:color/white">
+
+            <Button
+                android:id="@+id/btn_open"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:onClick="onClickView"
+                android:text="打开"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+            <RelativeLayout
+                android:id="@+id/rl_content"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_below="@id/btn_open"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp"
+                android:layout_marginTop="16dp"
+                android:background="@android:color/black">
+
+                <ImageView
+                    android:id="@+id/iv_logo"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_centerInParent="true"
+                    android:background="@mipmap/ic_launcher"
+                    android:contentDescription="@null"
+                    android:scaleType="centerInside" />
+
+                <TextView
+                    android:id="@+id/tv_desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:text="技术鸟\n\n微信号：NiaoTech\n\n上谈【安卓】,下论【苹果】.以扯淡的态度,面对操蛋的技术,用幽默的语言,诠释开发的经典。"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:visibility="gone" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp">
+
+            <TextView
+                android:id="@+id/txt_0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="15dp"
+                android:text="进度条"
+                android:textColor="#797979"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/progress_dialog"
+                style="@style/dialog_blue_button"
+                android:layout_below="@id/txt_0"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="10dp"
+                android:text="Try me!" />
+
+            <TextView
+                android:id="@+id/txt_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/progress_dialog"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="15dp"
+                android:text="基础弹窗"
+                android:textColor="#797979"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/basic_test"
+                style="@style/dialog_blue_button"
+                android:layout_below="@id/txt_1"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="10dp"
+                android:text="Try me!" />
+
+            <TextView
+                android:id="@+id/txt_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/basic_test"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:text="带标题的弹窗"
+                android:textColor="#797979"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/under_text_test"
+                style="@style/dialog_blue_button"
+                android:layout_below="@id/txt_2"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="10dp"
+                android:text="Try me!" />
+
+            <TextView
+                android:id="@+id/txt_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/under_text_test"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:text="错误弹窗"
+                android:textColor="#797979"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/error_text_test"
+                style="@style/dialog_blue_button"
+                android:layout_below="@id/txt_3"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="10dp"
+                android:text="Try me!" />
+
+            <TextView
+                android:id="@+id/txt_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/error_text_test"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:text="成功弹窗"
+                android:textColor="#797979"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/success_text_test"
+                style="@style/dialog_blue_button"
+                android:layout_below="@id/txt_4"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="10dp"
+                android:text="Try me!" />
+
+            <TextView
+                android:id="@+id/txt_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/success_text_test"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:text="警告弹窗"
+                android:textColor="#797979"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/warning_confirm_test"
+                style="@style/dialog_blue_button"
+                android:layout_below="@id/txt_5"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="10dp"
+                android:text="Try me!" />
+
+            <TextView
+                android:id="@+id/txt_6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/warning_confirm_test"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:text="可以取消的警告弹窗"
+                android:textColor="#797979"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/warning_cancel_test"
+                style="@style/dialog_blue_button"
+                android:layout_below="@id/txt_6"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="10dp"
+                android:text="Try me!" />
+
+            <TextView
+                android:id="@+id/txt_7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/warning_cancel_test"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:text="有图标的弹窗"
+                android:textColor="#797979"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/custom_img_test"
+                style="@style/dialog_blue_button"
+                android:layout_below="@id/txt_7"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="10dp"
+                android:text="Try me!" />
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.LinearLayoutCompat>
+</ScrollView>
+

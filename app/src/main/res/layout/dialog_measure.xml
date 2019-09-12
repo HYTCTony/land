@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/btn_dismiss"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.AppCompatImageView
+                android:layout_width="100dp"
+                android:layout_height="14dp"
+                android:layout_centerHorizontal="true"
+                android:background="@mipmap/btn_up" />
+
+            <android.support.v7.widget.AppCompatImageView
+                android:layout_width="20dp"
+                android:layout_height="6dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerInParent="true"
+                android:background="@mipmap/ic_liuhai" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#55595B"
+            android:padding="4dp">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/tv_box_statu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="魔盒：未开启"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/tv_longitude"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="8dp"
+                android:text="经度："
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/tv_accuracy"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_box_statu"
+                android:layout_marginTop="4dp"
+                android:text="精度：10米"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/tv_latitude"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/tv_accuracy"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="8dp"
+                android:text="纬度："
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:background="@color/white"
+            android:layout_height="40dp">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="地块列表"
+                android:textColor="@color/text_color"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/btn_search"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="8dp"
+                android:background="@mipmap/btn_search" />
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/btn_add"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="8dp"
+                android:background="@mipmap/btn_add" />
+        </RelativeLayout>
+
+        <include layout="@layout/smart"/>
+
+
+
+    </android.support.v7.widget.LinearLayoutCompat>
+</android.support.constraint.ConstraintLayout>

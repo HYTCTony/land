@@ -1,0 +1,259 @@
+<!--地块测量-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=9" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+<script src="../../lib/jquery-2.1.4.min.js" type="text/javascript"></script>
+<link href="../../plugins/openlayers/ol-3.20.1.css" rel="stylesheet" type="text/css" />
+<link href="../../plugins/openlayers/olmap.css" rel="stylesheet" type="text/css" />
+
+<style>
+html, body {margin: 0;padding: 0; width: 100%; height: 100%;}
+.map_container {width: 100%; height: 100%;}
+.map-action {position:fixed; top:0; padding-top:8px; right:10px; z-index:3; width:34px;}
+.map-action > button {width:34px; height:34px; border-radius:50%; border:none; text-indent:-99999px; margin-top:12px; background-color:rgba(0,0,0,0.5) !important;}
+.map-action > button.action-compass {background:url(image/compass.png) no-repeat center 45% / auto 21px;}
+.map-action > button.action-compass.active {background:url(image/compass_active.png) no-repeat center 45% / auto 21px;}
+.map-action > button.action-maplock {background:url(image/maplock.png) no-repeat center center / 28px 28px;}
+.map-action > button.action-maplock.active {background:url(image/maplock_active.png) no-repeat center center / 28px 28px;}
+.map-action > button.action-measure {background:url(image/measure.png) no-repeat center center / 28px 28px;}
+.map-action > button.action-measure.active {background:url(image/measure_active.png) no-repeat center center / 28px 28px;}
+.map-action > button.action-locate {background:url(image/locate.png) no-repeat center center / 28px 28px;}
+.map-action > button.action-locate.active {background:url(image/locate_active.png) no-repeat center center / 28px 28px;}
+</style>
+</head>
+<body>
+
+<div class="map_container">
+    <div id="map" style="width: 100%; height: 100%;"></div>
+    <div class="map-action">
+        <button class="action-compass" type="button"/>
+        <button class="action-maplock" type="button"/>
+        <button class="action-measure" type="button"/>
+        <button class="action-locate" type="button"/>
+    </div>
+</div>
+
+<script src="../../plugins/openlayers/ol-3.20.1.js" type="text/javascript"></script>
+<script src="../../plugins/openlayers/olmap.js" type="text/javascript"></script>
+<script src="../../view/measure/Measure.js" type="text/javascript"></script>
+
+<script>
+"use strict";
+
+var baseLayers = olmap.getBaseLayers();
+if(true) {
+    var ip = android.getIp();//获取IP
+    var port = android.getPort();//获取端口
+    var codeArr = JSON.parse(android.getCode());//获取图层编号
+
+    codeArr.forEach(function(code) {
+        baseLayers.push(
+            new ol.layer.Tile({
+                title: '影像图_'+code,
+                source:new ol.source.XYZ({
+                    projection: ol.proj.get('EPSG:4326'),
+                    maxZoom: 21,
+                    minZoom: 0,
+                    url: 'http://'+ip+':'+port+'/mapserver/tiles/image/'+code+'/{x}/{y}/{z}',
+                }),
+            })
+        );
+    });
+}
+
+
+//初始化地图
+olmap.start({
+    baseLayers: baseLayers,
+    target: document.getElementById('map'),
+    zoom: false,
+    callback: function(self) {
+        //直角比例尺
+        self.map.addControl(self.getRightAngleScaleLine(document.getElementById('scale')));
+        //禁用部分interaction
+        self.map.getInteractions().forEach(function(interaction, i) {
+            if(interaction instanceof ol.interaction.DoubleClickZoom) {
+                //禁用双击放大地图
+                interaction.setActive(false);
+            }
+        });
+        //为了防止remove后数组越界产生意外结果，这里要分开写forEach
+        self.map.getInteractions().forEach(function(interaction, i) {
+            //删除双指旋转地图
+            if(interaction instanceof ol.interaction.PinchRotate) {
+                self.map.removeInteraction(interaction);
+            }
+            //删除双指缩放地图
+            if(interaction instanceof ol.interaction.PinchZoom) {
+                self.map.removeInteraction(interaction);
+                //重新添加双指缩放地图
+                self.map.addInteraction(new ol.interaction.PinchZoom({
+                    constrainResolution: true
+                }));
+            }
+        });
+        //通知android开启罗盘
+        android.switch_compass(true);
+    }
+});
+
+
+//初始化页面交互
+main.start({
+    olmap: olmap
+});
+
+//获取一次位置信息
+if(true) {
+    var jsonstr = android.getLocation();
+    if(jsonstr) {
+        var json = JSON.parse(jsonstr);
+        var x = json.longitude;
+        var y = json.latitude;
+        main.updateLocation([x,y]);
+    }
+}
+
+/**
+ * 提供给安卓调用的方法
+ */
+var android_call = {
+    /**
+     * 刷新北斗定位位置
+     * @param {Number} x 经度
+     * @param {Number} y 纬度
+     */
+    refresh_beidou_location: function(x, y) {
+        main.updateLocation([x,y]);
+    },
+    /**
+     * 定位到地块
+     * @param landId 地块ID
+     */
+    locate_land: function(landId) {
+        main.locateToLand(landId);
+    },
+    /**
+     * 旋转地图
+     * @param {Number} radian 方向角（以正北为0，单位：弧度）
+     */
+    rotate: function(radian) {
+        call.rotate(radian);
+    },
+    /**
+     * 加载周边地块
+     * @param {JSONObject} data
+     * [{
+     *   id: 地块ID,
+     *   wkt: 地块wkt
+     * }, {...}]
+     */
+    load_land_around: function(data) {
+        call.load_land_around(data);
+    },
+    /**
+     * 加载列表地块
+     * @param {JSONObject} data
+     * [{
+     *   id: 地块ID,
+     *   geo_polygon: 地块GeoJSON
+     *   geo_area: 地块面积，单位：亩
+     * }, {...}]
+     * @param {Boolean} loadMore 加载更多 
+     */
+    load_land_list: function(data, loadMore) {
+        $.each(data, function(i, item) {
+            if(item.geo_polygon) {
+                item.geo_polygon = JSON.parse(item.geo_polygon);
+            }
+        });
+        call.load_land_list(data, loadMore);
+    },
+    /**
+     * 地块编辑开关
+     * @param {String} action 动作：open/close/cancel
+     * @param {Number} landId 地块ID
+     * eg: switchLandEdit('open');//新建地块
+     * eg: switchLandEdit('close', landId);//新建地块保存后，传入新地块的landId
+     * eg: switchLandEdit('open', landId);//对地块ID为landId的地块进行编辑
+     */
+    switch_land_edit: function(action, landId) {
+        console.log('switch_land_edit');
+        main.switchLandEdit(action, landId);
+    },
+    /**
+     * 地块测量开关
+     * @param {String} action 动作：open/close/cancel
+     */
+    switch_land_measure: function(action) {
+        main.switchLandMeasure(action);
+    },
+    /**
+     * 测量：测量开始/重新测量
+     * @return {JSONString}
+     * {
+     *   success {Boolean}: 是否成功
+     * }
+     */
+    land_measure_start: function() {
+        main.landMeasureStart();
+    },
+    /**
+     * 测量：取点
+     * @return {JSONString}
+     * {
+     *   success {Boolean}: 是否成功
+     *   point_count {Number}: 当前取点数
+     * }
+     */
+    land_measure_append: function() {
+        var rs = main.landMeasureAppend();
+        return rs;
+    },
+    /**
+     * 测量：撤销上一个取点
+     * @return {JSONString}
+     * {
+     *   success {Boolean}: 是否成功
+     *   point_count {Number}: 当前取点数
+     * }
+     */
+    land_measure_undo: function() {
+        var rs = main.landMeasureUndo();
+        return rs;
+    },
+    /**
+     * 测量：测量结束
+     * @return {JSONString}
+     * {
+     *   success {Boolean}: 是否成功
+     *   geo_polygon {JSONObject}: 地块GeoJSON
+     *   geo_area {Number}: 面积，单位：亩
+     * }
+     */
+    land_measure_end: function() {
+        var rs = main.landMeasureEnd();
+        return {
+            success: rs ? true : false,
+            geo_polygon: rs ? rs.geo_json : null,
+            geo_area: rs ? rs.area : null
+        };
+    },
+    /**
+     * 测量：取消测量
+     */
+    land_measure_cancel: function() {
+        main.landMeasureCancel();
+    }
+}
+
+</script>
+
+
+</body>
+</html>

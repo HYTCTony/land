@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="white">#ffffff</color>
+    <color name="less_black">#7B7B7B</color>
+    <color name="red">#FF0000</color>
+    <color name="orange">#FF8C00</color>
+    <color name="green">#32CD32</color>
+    <color name="gold">#FFD700</color>
+    <color name="grey">#778899</color>
+    <color name="text">#359AE8</color>
+    <color name="blue">#359AE8</color>
+    <color name="black">#000000</color>
+    <color name="gainsboro">#e9e9e9</color>
+    <color name="transparent">#00000000</color>
+    <color name="background">#F3F3F3</color>
+    <color name="item_select">#E8F9FF</color>
+
+    <color name="subject_color">#1C9DE6</color>
+    <color name="text_color">#3a3a3a</color>
+    <color name="line_color">#e8e8e8</color>
+
+    <!-- login -->
+    <color name="color_login_bg">#F3F3F3</color>
+    <color name="color_login_text_left">#666666</color>
+    <color name="color_login_text_right">#30BBF2</color>
+    <color name="color_login_text_hint">#999999</color>
+    <color name="color_login_text">#555</color>
+
+    <!--sweet-->
+    <color name="error_stroke_color">#F27474</color>
+    <color name="success_stroke_color">#A5DC86</color>
+    <color name="blue_btn_bg_color">#AEDEF4</color>
+    <color name="blue_btn_bg_pressed_color">#96BFD2</color>
+    <color name="gray_btn_bg_color">#D0D0D0</color>
+    <color name="gray_btn_bg_pressed_color">#B6B6B6</color>
+    <color name="red_btn_bg_color">#DD6B55</color>
+    <color name="red_btn_bg_pressed_color">#CD5B55</color>
+    <color name="trans_success_stroke_color">#33A5DC86</color>
+    <color name="warning_stroke_color">#F8BB86</color>
+
+    <color name="material_blue_grey_80">#ff37474f</color>
+    <color name="material_blue_grey_90">#ff263238</color>
+    <color name="material_blue_grey_95">#ff21272b</color>
+    <color name="material_deep_teal_20">#ff80cbc4</color>
+    <color name="material_deep_teal_50">#ff009688</color>
+</resources>

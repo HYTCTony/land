@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/rl_form"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+    <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/line_color" />
+
+    <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <android.support.v7.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+            <android.support.v7.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp">
+
+                <android.support.v7.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="烟区"
+                        android:textColor="@color/text_color"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/btn_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:gravity="center_vertical"
+                        android:hint="请选择烟区"
+                        android:maxLines="1"
+                        android:textColor="@color/less_black"
+                        android:textColorHint="@color/grey"
+                        android:textSize="16sp" />
+            </android.support.v7.widget.LinearLayoutCompat>
+
+            <android.support.v7.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp">
+
+                <android.support.v7.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="地名"
+                        android:textColor="@color/text_color"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                <android.support.v7.widget.AppCompatEditText
+                        android:id="@+id/et_place_name"
+                        android:layout_width="200dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:gravity="center_vertical"
+                        android:hint="请输入地名"
+                        android:maxLength="12"
+                        android:maxLines="1"
+                        android:textColor="@color/less_black"
+                        android:textColorHint="@color/grey"
+                        android:textSize="16sp" />
+            </android.support.v7.widget.LinearLayoutCompat>
+
+            <android.support.v7.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:visibility="visible">
+
+                <android.support.v7.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="土壤"
+                        android:textColor="@color/text_color"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/btn_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:gravity="center_vertical"
+                        android:hint="请选择土壤类型"
+                        android:textColor="@color/less_black"
+                        android:textColorHint="@color/grey"
+                        android:textSize="16sp" />
+            </android.support.v7.widget.LinearLayoutCompat>
+
+            <android.support.v7.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp">
+
+                <android.support.v7.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="地形"
+                        android:textColor="@color/text_color"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/btn_3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:gravity="center_vertical"
+                        android:hint="请选择地形类型"
+                        android:maxLines="1"
+                        android:textColor="@color/less_black"
+                        android:textColorHint="@color/grey"
+                        android:textSize="16sp" />
+            </android.support.v7.widget.LinearLayoutCompat>
+
+            <android.support.v7.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp">
+
+                <android.support.v7.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="烟户"
+                        android:textColor="@color/text_color"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/btn_4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:gravity="center_vertical"
+                        android:hint="请选择烟农"
+                        android:maxLines="1"
+                        android:textColor="@color/less_black"
+                        android:textColorHint="@color/grey"
+                        android:textSize="16sp" />
+            </android.support.v7.widget.LinearLayoutCompat>
+
+            <android.support.v7.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp">
+
+                <android.support.v7.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="亩数"
+                        android:textColor="@color/text_color"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/et_area"
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:gravity="center_vertical"
+                        android:hint="未测量"
+                        android:inputType="numberDecimal"
+                        android:textColor="@color/less_black"
+                        android:textColorHint="@color/gainsboro"
+                        android:textSize="16sp" />
+
+                <android.support.v7.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="亩"
+                        android:textColor="@color/grey"
+                        android:textSize="14sp" />
+            </android.support.v7.widget.LinearLayoutCompat>
+
+            <View
+                    android:layout_width="100dp"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="78dp"
+                    android:background="@color/line_color" />
+
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@color/background"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp">
+
+                <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/tv_season"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="xx-xx年"
+                        android:textColor="@color/text_color"
+                        android:textSize="14sp" />
+
+                <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/btn_more"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="16dp"
+                        android:text="更多"
+                        android:textColor="@color/subject_color"
+                        android:textSize="12sp" />
+
+            </RelativeLayout>
+
+            <android.support.v7.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp">
+
+                <android.support.v7.widget.AppCompatTextView
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:text="农作物"
+                        android:textColor="@color/text_color"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/tv_plant"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="32dp"
+                        android:gravity="center_vertical"
+                        android:hint="请选择农作物"
+                        android:maxLines="1"
+                        android:textColor="@color/less_black"
+                        android:textColorHint="@color/grey"
+                        android:textSize="16sp" />
+            </android.support.v7.widget.LinearLayoutCompat>
+
+            <android.support.v7.widget.LinearLayoutCompat
+                    android:id="@+id/ll_period"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:visibility="gone">
+
+                <android.support.v7.widget.AppCompatTextView
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:text="植期"
+                        android:textColor="@color/text_color"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/tv_period"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="32dp"
+                        android:gravity="center_vertical"
+                        android:hint="请选择植期"
+                        android:maxLines="1"
+                        android:textColor="@color/less_black"
+                        android:textColorHint="@color/grey"
+                        android:textSize="16sp" />
+            </android.support.v7.widget.LinearLayoutCompat>
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/line_color" />
+
+            <android.support.v7.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp">
+
+                <android.support.v7.widget.AppCompatTextView
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:text="测量者"
+                        android:textColor="@color/text_color"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/tv_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textColor="@color/grey"
+                        android:textSize="16sp" />
+            </android.support.v7.widget.LinearLayoutCompat>
+
+            <android.support.v7.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp">
+
+                <android.support.v7.widget.AppCompatTextView
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:text="测量时间"
+                        android:textColor="@color/text_color"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/tv_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textColor="@color/grey"
+                        android:textSize="16sp" />
+            </android.support.v7.widget.LinearLayoutCompat>
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="4dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:background="@color/line_color" />
+
+            <android.support.v7.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:visibility="gone">
+
+                <android.support.v7.widget.AppCompatTextView
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:text="备注"
+                        android:textColor="@color/text_color"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                <android.support.v7.widget.AppCompatEditText
+                        android:id="@+id/et_remarks"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:gravity="center_vertical"
+                        android:hint="请输入备注信息"
+                        android:textColor="@color/grey"
+                        android:textColorHint="@color/gainsboro"
+                        android:textSize="16sp" />
+            </android.support.v7.widget.LinearLayoutCompat>
+
+        </android.support.v7.widget.LinearLayoutCompat>
+    </android.support.v4.widget.NestedScrollView>
+</android.support.v7.widget.LinearLayoutCompat>

@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_measure"
+    android:layout_width="match_parent"
+    android:layout_height="180dp"
+    android:layout_alignParentBottom="true"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="12dp">
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/tv_latitude_measure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:text="纬度："
+            android:textColor="@color/text_color"
+            android:textSize="14sp" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/tv_longitud_measure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/tv_latitude_measure"
+            android:text="经度："
+            android:textColor="@color/text_color"
+            android:textSize="14sp" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/tv_accuracy_measure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/tv_longitud_measure"
+            android:text="精度："
+            android:textColor="@color/text_color"
+            android:textSize="14sp" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/tv_box_statu_measure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/tv_accuracy_measure"
+            android:text="魔盒：未开启"
+            android:textColor="@color/text_color"
+            android:textSize="14sp" />
+
+        <View
+            android:id="@+id/line"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="24dp"
+            android:background="@color/line_color" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/tv_area"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="16dp"
+            android:layout_toEndOf="@id/line"
+            android:text="0.0"
+            android:textColor="@color/text_color"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/tv_area"
+            android:layout_marginStart="4dp"
+            android:layout_toEndOf="@id/tv_area"
+            android:text="亩"
+            android:textColor="@color/text_color"
+            android:textSize="16sp" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/tv_area"
+            android:layout_alignStart="@id/tv_area"
+            android:layout_marginBottom="8dp"
+            android:layout_toEndOf="@id/line"
+            android:text="面积："
+            android:textColor="@color/text_color"
+            android:textSize="14sp" />
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/btn_cancel"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:padding="8dp"
+            android:src="@mipmap/btn_close" />
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/btn_save"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:visibility="gone"
+            android:layout_alignParentEnd="true"
+            android:padding="8dp"
+            android:src="@mipmap/btn_ok" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/line_color" />
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/btn_start"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/iv1"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_centerHorizontal="true"
+                android:background="@mipmap/btn_start_on" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/tv_start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/iv1"
+                android:layout_centerHorizontal="true"
+                android:text="开始"
+                android:textColor="@color/text_color"
+                android:textSize="14sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/btn_point"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/iv2"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_centerHorizontal="true"
+                android:background="@mipmap/btn_getpoint_on" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/iv2"
+                android:layout_centerHorizontal="true"
+                android:text="取点"
+                android:textColor="@color/text_color"
+                android:textSize="14sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/btn_revoke"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/iv3"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_centerHorizontal="true"
+                android:background="@mipmap/btn_revoke_on" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/iv3"
+                android:layout_centerHorizontal="true"
+                android:text="撤销"
+                android:textColor="@color/text_color"
+                android:textSize="14sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/btn_close"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/iv4"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_centerHorizontal="true"
+                android:background="@mipmap/btn_closearea_on" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/iv4"
+                android:layout_centerHorizontal="true"
+                android:text="闭合"
+                android:textColor="@color/text_color"
+                android:textSize="14sp" />
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.LinearLayoutCompat>
+
+</android.support.v7.widget.LinearLayoutCompat>
+

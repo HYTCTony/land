@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/background">
+
+    <cn.cassia.sugar.land.dialog.BackEditText
+        android:id="@+id/edit_text"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_weight="1"
+        android:background="@drawable/bg_mine"
+        android:hint="请输入内容"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:textColor="@color/text_color"
+        android:textColorHint="@color/grey"
+        android:textSize="16sp" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/send"
+        android:layout_width="80dp"
+        android:layout_height="match_parent"
+        android:background="@color/subject_color"
+        android:gravity="center"
+        android:text="提交"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+</LinearLayout>
